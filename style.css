@@ -19,7 +19,6 @@ body {
   line-height: 1.6;
 }
 
-/* SKIP LINK */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -145,9 +144,24 @@ body {
   width: 18px;
   height: 18px;
 }
-.hero-photo-wrap img {
+.hero-photo-wrap {
   width: 100%;
-  height: auto;
+}
+.photo-btn {
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.photo-btn img {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  display: block;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
@@ -199,15 +213,20 @@ body {
 }
 .tile {
   border: none;
-  background: none;
+  background: #ddd;
   width: 100%;
   cursor: pointer;
   overflow: hidden;
   border-radius: 8px;
+  display: block;
+  position: relative;
+  min-height: 250px;
 }
 .tile img {
   width: 100%;
   height: 100%;
+  min-height: 250px;
+  max-height: 400px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s;
@@ -238,6 +257,12 @@ body {
   gap: 1rem;
   margin-top: 2rem;
 }
+.gallery-grid .tile {
+  height: 250px;
+}
+.gallery-grid .tile img {
+  height: 100%;
+}
 
 /* TEAM */
 .team-list {
@@ -254,7 +279,7 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* FOOTER */
+/* FOOTER (FIX FOR DUSTBIN ICON) */
 .site-footer {
   background: var(--color-dark);
   color: #fff;
@@ -265,7 +290,25 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.footer-brand svg {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+}
+.footer-address {
+  font-size: 0.85rem;
+  color: #a0aec0;
 }
 
 /* LIGHTBOX */
@@ -324,5 +367,9 @@ body {
   .nav-toggle {
     display: block;
   }
-                                }
-  
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
